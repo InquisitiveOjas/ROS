@@ -17,13 +17,8 @@ With robotics, subscribers typically monitor system states such as triggering an
 A subscriber callback function processes the data from a topic it subscribes to only when a new data is published.
 
 ROS FILE SYSTEM:
-                
-     ROS workspace-
-     
-     ROS workspace (catkin workspace) consists of different subspaces. A workspace is a folder to organize ROS project files.                
-     ROS uses catkin, which is a build tool to compile source files into binary files. Your code goes into the src workspace folder and 
-     
-     catkin manages the other ones. 
+ROS workspace-
+ROS workspace (catkin workspace) consists of different subspaces. A workspace is a folder to organize ROS project files.                ROS uses catkin, which is a build tool to compile source files into binary files. Your code goes into the src workspace folder and  catkin manages the other ones. 
                 
        
 A catkin ROS workspace contains three main spaces:
