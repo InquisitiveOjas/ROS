@@ -14,3 +14,4 @@ If you use the rosnode info command you can see with which topics a node is conn
 
 (2)Subscriber Nodes:-A ROS node that receives information is called a subscriber. It's subscribed to information in a topic and uses topic callback functions to process the received information.
 With robotics, subscribers typically monitor system states such as triggering an alert when the robot reaches joint limits.
+A subscriber callback function processes the data from a topic it subscribes to only when a new data is published.
