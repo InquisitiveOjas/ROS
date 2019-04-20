@@ -70,3 +70,14 @@ You can also install all ROS package dependencies in one command:
       $ rosdep install --from_paths . --ignore-src -y
       
 src is not the only space in your workspace: there is also the 'devel' space. This contains all binary executables from your src spaces.
+
+Topic type is an abstract idea that acquires or inherits the ROS message type that is to be exchanged between nodes.
+
+ROS also supports derived message types.
+
+Nodes can process and share information through topics. The information they pass through these topics needs to be structured in some way, to make it actually usable. Such a structure is known as a data structure. In ROS, we can abstract these data structures as ROS message types. Common data structures in ROS are for example floats, integers, and strings.
+
+In ROS, we can easily combine multiple data structures using derived message types. For example, to represent a position in 3D space we will need 3 floating point values: X, Y and Z. The derived message type will then be a struct of three floating point numbers: {float x, float y, float z}.
+
+These (derived) message types are defined in message files. These message files are typically located in <ros_package_name>/msg, with the filename <NewMessageType>.msg.
+  
