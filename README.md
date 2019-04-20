@@ -11,6 +11,7 @@ Important building blocks of a ROS application:
                                                   
 (1)Publisher Nodes:-A ROS node that generates information is called a publisher. A publisher sends information to nodes via topics.      With robotics often these publishers are connected with sensors like cameras, encoders etc..
 If you use the rosnode info command you can see with which topics a node is connected and if these are outbound or inbound connections.           
+
 (2)Subscriber Nodes:-A ROS node that receives information is called a subscriber. It's subscribed to information in a topic and uses      topic callback functions to process the received information.
 With robotics, subscribers typically monitor system states such as triggering an alert when the robot reaches joint limits.
 
@@ -45,3 +46,27 @@ Finally, we initialize catkin:
 
     $ catkin init
     $ catkin build
+
+
+ROS packages reside in the 'src' space. In ROS, software is organised in ROS packages. A ROS package typically contains the following things:
+      
+      - CMakeList.txt
+      - package.xml (These two files indicate that the folder is a ROS package file.)
+      - scripts/ (This folder contains all Python scripts.)
+      - src/ (This folder contains all C++ source files)
+      
+To create a new ROS package, we will use catkin:
+
+      $ cd <path_to_ros_ws>/src
+      $ catkin_create_pkg hrwros_week2 std_msgs
+      
+We can simply install their binaries with the rosdep command:
+
+      $ rosdep install <package_name>
+
+You can also install all ROS package dependencies in one command:
+
+      $ cd <path_to_ros_ws>/src
+      $ rosdep install --from_paths . --ignore-src -y
+      
+src is not the only space in your workspace: there is also the 'devel' space. This contains all binary executables from your src spaces.
